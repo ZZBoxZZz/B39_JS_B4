@@ -195,3 +195,33 @@ document.getElementById("btnB7").onclick = function() {
     //đầu ra
     document.getElementById("infoB7").innerHTML = tram+" "+chuc+" "+donvi;
 }
+
+document.getElementById("btnB8").onclick = function() {
+    //Đầu vào
+    var b7 = document.getElementById("b7").value;
+    var b7_x = document.getElementById("b7_x").value;
+    var b7_y = document.getElementById("b7_y").value;
+
+    var b7_1 = document.getElementById("b7_1").value;
+    var b7_1_x = document.getElementById("b7_1_x").value;
+    var b7_1_y = document.getElementById("b7_1_y").value;
+
+    var b7_3 = document.getElementById("b7_3").value;
+    var b7_3_x = document.getElementById("b7_3_x").value;
+    var b7_3_y = document.getElementById("b7_3_y").value;
+
+    var b7_4_x = document.getElementById("b7_4_x").value;
+    var b7_4_y = document.getElementById("b7_4_y").value;
+    //Xử lí
+
+    var d = Math.sqrt(Math.pow(b7_y-b7_x,2)+Math.pow(b7_4_y-b7_4_x,2));
+    var d_1 = Math.sqrt(Math.pow(b7_1_y-b7_1_x,2)+Math.pow(b7_4_y-b7_4_x,2));
+    var d_2 = Math.sqrt(Math.pow(b7_3_y-b7_3_x,2)+Math.pow(b7_4_y-b7_4_x,2));
+    if (d > d_1 && d > d_2){
+        document.getElementById("infoB8").innerHTML = "Sinh viên xa trường nhất là: "+b7; // đầu ra
+    } else if (d_1 > d && d_1 > d_2){
+        document.getElementById("infoB8").innerHTML = "Sinh viên xa trường nhất là: "+b7_1; //đầu ra
+    } else {
+        document.getElementById("infoB8").innerHTML = "Sinh viên xa trường nhất là: "+b7_3; //đẩu ra
+    }
+}
